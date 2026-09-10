@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_pf.c                                    :+:      :+:    :+:   */
+/*   ft_numlen_pf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolivare <jolivare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 09:20:07 by jolivare          #+#    #+#             */
-/*   Updated: 2026/09/10 14:15:00 by jolivare         ###   ########.fr       */
+/*   Created: 2026/09/10 14:00:00 by jolivare          #+#    #+#             */
+/*   Updated: 2026/09/10 14:00:00 by jolivare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar_pf(char c, size_t *cont)
+int	ft_numlen_pf(unsigned long num, int base)
 {
-	write (1, &c, 1);
-	(*cont)++;
-}
+	int	len;
 
-void	ft_print_char(char c, size_t *cont, t_flags flags)
-{
-	int	spaces;
-
-	spaces = 0;
-	if (flags.width > 1)
-		spaces = flags.width - 1;
-	if (!flags.minus)
+	len = 0;
+	if (num == 0)
+		return (1);
+	while (num > 0)
 	{
-		while (spaces-- > 0)
-			ft_putchar_pf(' ', cont);
+		num /= base;
+		len++;
 	}
-	ft_putchar_pf(c, cont);
-	if (flags.minus)
-	{
-		while (spaces-- > 0)
-			ft_putchar_pf(' ', cont);
-	}
+	return (len);
 }

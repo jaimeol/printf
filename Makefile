@@ -20,6 +20,7 @@ SOURCES = ft_printf.c \
 		  ft_putunsigned_pf.c \
 		  ft_putptr_pf.c \
 		  ft_putstr_pf.c \
+		  ft_numlen_pf.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 
