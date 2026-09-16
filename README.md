@@ -25,6 +25,13 @@ Key features:
 - Building a **modular parsing system** for format specifiers  
 - Implementing **buffered output** for efficiency  
 
+### ⭐ Bonus requirements
+This implementation also supports the bonus formatting rules:
+- Flags: `#`, ` ` (space), `+`, `-`, `0`
+- Field width (including multi-digit widths)
+- Precision with `.` for supported conversions
+- Combined flag/width/precision handling in a single specifier
+
 ---
 
 ## 🧠 Reflection
